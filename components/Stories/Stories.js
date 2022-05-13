@@ -33,12 +33,14 @@ const Stories = () => {
         },
     ]
   return (
-    <div className='w-full'>
+    <div className='w-6/12 p-3 border border-gray-200 rounded-r-md'>
+        <div className='flex flex-row overflow-x-scroll scrollbar-hide '>
         {
             stories.map(story =>{
                 return <Story Name={story.name} ProfilePicture={story.profile_picture} />
             })
         }
+        </div>
     </div>
   )
 }
