@@ -25,7 +25,6 @@ const PeopleYouMayKnow = () => {
             className="h-10 w-10 rounded-full border p-[2px]"
             src={user.picture}
             alt=""
-            srcset=""
           />
           <div className='flex-1 ml-4'>
             <h2 className='font-semibold text-sm'>{user.username}</h2>
