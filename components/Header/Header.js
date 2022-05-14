@@ -7,32 +7,29 @@ import {
   HeartIcon,
   EmojiHappyIcon,
 } from '@heroicons/react/outline'
-import InstagramLogo from '../../public/InstagramLogo.png'
+import Image from 'next/image'
 
 function Header() {
   return (
-    <nav className="m-auto bg-white">
-      <div className="m-auto flex w-9/12 flex-row flex-wrap justify-evenly p-4 pb-2 align-middle">
-        <div className="w-1/3">
-          <img
-            className="flex w-24 object-contain"
-            src={
-              'https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png'
-            }
-            alt="instagram-logo"
-          />
+    <div className=" shadow-sm border-b bg-white">
+      <div className='flex justify-between items-center max-w-5xl lg:mx-auto'>
+
+        <div className='relative  lg:inline-grid h-16 w-24 cursor-pointer'>
+          <Image src={"https://links.papareact.com/ocw"}
+          layout={"fill"}
+          objectFit={"contain"}/>
         </div>
-        <div className="w-1/3">
+
+        <div className="mt-2 rounded-md">
           <input
-            className=" m-auto  w-60 rounded-md bg-gray-100 px-4 py-1.5 focus:outline-none "
+            className=" w-60 rounded-md bg-gray-100 px-4 p-1.5 focus:outline-none "
             placeholder="Search"
             type="text"
             name=""
             id=""
           />
         </div>
-
-        <div className="flex w-1/3 flex-row justify-evenly">
+        <div className="flex flex-row justify-center space-x-4">
           <HomeIcon className="w-7" color="#1a1b1c" />
           <ChatAlt2Icon className="w-7" color="#1a1b1c" />
           <FireIcon className="w-7" color="#1a1b1c" />
@@ -40,7 +37,7 @@ function Header() {
           <EmojiHappyIcon className="w-7" color="#1a1b1c" />
         </div>
       </div>
-    </nav>
+    </div>
   )
 }
 
