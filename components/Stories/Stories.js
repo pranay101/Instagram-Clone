@@ -1,47 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Story from "./Story/Story"
+import { faker } from '@faker-js/faker';
 
 const Stories = () => {
-    const stories = [
-        {
-            "name":"Pranay Prajapati",
-            "profile_picture":"https://i.pinimg.com/564x/70/81/fe/7081feab06a54c2e16f67660af38d7a1.jpg",
-        },
-        {
-            "name":"Pranay Prajapati",
-            "profile_picture":"https://i.pinimg.com/564x/70/81/fe/7081feab06a54c2e16f67660af38d7a1.jpg",
-        },
-        {
-            "name":"Pranay Prajapati",
-            "profile_picture":"https://i.pinimg.com/564x/70/81/fe/7081feab06a54c2e16f67660af38d7a1.jpg",
-        },
-        {
-            "name":"Pranay Prajapati",
-            "profile_picture":"https://i.pinimg.com/564x/70/81/fe/7081feab06a54c2e16f67660af38d7a1.jpg",
-        },
-        {
-            "name":"Pranay Prajapati",
-            "profile_picture":"https://i.pinimg.com/564x/70/81/fe/7081feab06a54c2e16f67660af38d7a1.jpg",
-        },
-        {
-            "name":"Pranay Prajapati",
-            "profile_picture":"https://i.pinimg.com/564x/70/81/fe/7081feab06a54c2e16f67660af38d7a1.jpg",
-        },
-        {
-            "name":"Pranay Prajapati",
-            "profile_picture":"https://i.pinimg.com/564x/70/81/fe/7081feab06a54c2e16f67660af38d7a1.jpg",
-        },
-    ]
+    const [stories, setstories] = useState([])
+    useEffect(() => {
+      const Stories = [...Array(20)].map((_,i) =>({
+          "name":`${faker.name.firstName()} ${faker.name.lastName()}`,
+          "username":faker.name.firstName(),
+          "picture":faker.image.avatar(),
+          "id":i,
+      }))
+      setstories(Stories)
+    }, [])
+    
   return (
-    <div className='w-6/12 p-3 border border-gray-200 rounded-r-md'>
-        <div className='flex flex-row overflow-x-scroll scrollbar-hide '>
+        <div className='flex space-x-2 p-6 bg-white mt-8 border border-gray-300 rounded-sm overflow-x-scroll scrollbar-hide '>
         {
-            stories.map(story =>{
-                return <Story Name={story.name} ProfilePicture={story.profile_picture} />
+            stories.map((story,index) =>{
+                return <Story key={index} Name={story.name} ProfilePicture={story.picture} />
             })
         }
         </div>
-    </div>
   )
 }
 

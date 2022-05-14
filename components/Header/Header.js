@@ -11,7 +11,7 @@ import InstagramLogo from '../../public/InstagramLogo.png'
 
 function Header() {
   return (
-    <nav className="m-auto">
+    <nav className="m-auto bg-white">
       <div className="m-auto flex w-9/12 flex-row flex-wrap justify-evenly p-4 pb-2 align-middle">
         <div className="w-1/3">
           <img
@@ -20,7 +20,6 @@ function Header() {
               'https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png'
             }
             alt="instagram-logo"
-            srcset=""
           />
         </div>
         <div className="w-1/3">

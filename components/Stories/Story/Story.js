@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Story = ({Name,ProfilePicture}) => {
+const Story = ({ Name, ProfilePicture }) => {
   return (
-    <div className='w-24 h-24 m-1 p-1 flex flex-col justify-center align-middle text-center'>
-        <div className='rounded-full overflow-hidden w-16 h-16' >
-        <img
-            className='object-cover'
-            src={ProfilePicture} 
-            alt={Name + "'s Story"} />
-        </div>
-        <p className='w-20 text-xs mt-2 truncate font-normal font-sans'>{Name}</p>
+    <div>
+      <img
+        className="h-14 w-14 cursor-pointer rounded-full border-2 border-red-500 object-contain p-[1.5px] hover:scale-110 transition transform duration-200 ease-out"
+        src={ProfilePicture}
+        alt={Name + "'s Story"}
+      />
+
+      <p className="mt-2 w-14 truncate text-center text-xs font-normal">{Name}</p>
     </div>
   )
 }
