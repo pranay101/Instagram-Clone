@@ -30,11 +30,11 @@ function Header() {
           />
         </div>
         <div className="flex flex-row justify-center space-x-4">
-          <HomeIcon className="w-7" color="#1a1b1c" />
-          <ChatAlt2Icon className="w-7" color="#1a1b1c" />
-          <FireIcon className="w-7" color="#1a1b1c" />
-          <HeartIcon className="w-7" color="#1a1b1c" />
-          <EmojiHappyIcon className="w-7" color="#1a1b1c" />
+          <HomeIcon className="navbtn" color="#1a1b1c" />
+          <ChatAlt2Icon className="navbtn" color="#1a1b1c" />
+          <FireIcon className="navbtn" color="#1a1b1c" />
+          <HeartIcon className="navbtn" color="#1a1b1c" />
+          <EmojiHappyIcon className="navbtn" color="#1a1b1c" />
         </div>
       </div>
     </div>
