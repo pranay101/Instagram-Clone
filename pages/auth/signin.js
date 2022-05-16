@@ -26,7 +26,7 @@ const signin = ({ providers }) => {
         </div>
       </div>
 
-      <div className="col-span-1 md:translate-y-[40%] lg:translate-y-0">
+      <div className="col-span-1">
         <form
           className="mx-8 my-3 border border-gray-200"
           onSubmit={handleSubmit}

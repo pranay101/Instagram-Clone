@@ -1,5 +1,7 @@
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
+import { getToken } from "next-auth/jwt";
+import makeid from "../../../helpers/helpers"
 
 export default NextAuth({
   providers: [
@@ -14,16 +16,17 @@ export default NextAuth({
         username: { label: 'Username', type: 'text' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials, req) {
-        console.log(credentials)
+      async authorize(credentials, req) {        
         if (
-          credentials.username === 'test@test.com' &&
-          credentials.password === '0987654321'
+          credentials.username === 'pranayprajapati_._' &&
+          credentials.password === 'pranayprajapati'
         ) {
           return {
-            id: 2,
-            name: 'pranay',
-            email: 'pranay@gmail.com',
+            id: process.env.ID,
+            name: process.env.NAME,
+            email: process.env.EMAIL,
+            username:process.env.username,
+            image:"https://avatars.githubusercontent.com/u/35213873?v=4",     
           }
         }
         return null
@@ -32,9 +35,8 @@ export default NextAuth({
         async jwt({ token, user }) {
           if (user) {
             return {
-              id: 2,
-              name: 'pranay',
-              email: 'pranay@gmail.com',
+              ...user,
+              accesstoken: makeid(10)
             }
           }
 

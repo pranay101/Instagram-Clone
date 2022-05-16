@@ -6,7 +6,6 @@ export async function middleware(req){
     const token = await getToken({req, secret:process.env.JWT_SECRET})
 
     const {pathname,origin} = req.nextUrl;
-    console.log(pathname)
 
     // allow the request if the following is true
     // 1. its a req for next-auth session and provider fetching
