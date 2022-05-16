@@ -8,6 +8,7 @@ import {
   EmojiHappyIcon,
 } from '@heroicons/react/outline'
 import Image from 'next/image'
+import { signOut } from 'next-auth/react'
 
 function Header() {
   return (
@@ -34,7 +35,7 @@ function Header() {
           <ChatAlt2Icon className="navbtn" color="#1a1b1c" />
           <FireIcon className="navbtn" color="#1a1b1c" />
           <HeartIcon className="navbtn" color="#1a1b1c" />
-          <EmojiHappyIcon className="navbtn" color="#1a1b1c" />
+          <EmojiHappyIcon onClick={signOut} className="navbtn" color="#1a1b1c" />
         </div>
       </div>
     </div>
