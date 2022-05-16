@@ -2,6 +2,7 @@ import { getProviders, signIn } from 'next-auth/react'
 import React, { useState } from 'react'
 
 const signin = ({ providers }) => {
+  const [showCredentials, setshowCredentials] = useState(false)
   const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
   const handleSubmit = async (e) => {
@@ -31,10 +32,18 @@ const signin = ({ providers }) => {
           onSubmit={handleSubmit}
         >
           <img
+            onClick={() => setshowCredentials((old) => !old)}
             className=" my-10 mx-auto w-48 object-contain"
             src="https://links.papareact.com/ocw"
             alt=""
           />
+          {showCredentials ? (
+            <div className="mx-auto flex w-10/12 flex-col border border-gray-300 px-5 py-2 mb-3">
+              <p className='text-xs text-gray-400 p-1'>username: pranayprajapati_._</p>
+              <p className='text-xs text-gray-400 p-1'>password: pranayprajapati</p>
+            </div>
+          ) : null}
+
           <div className="mx-auto flex w-10/12 flex-col border border-gray-300 px-5 py-2">
             <label className="my-1 text-xs text-gray-400">
               Username, Phone or Email
@@ -48,7 +57,7 @@ const signin = ({ providers }) => {
             />
           </div>
           <div className="mx-auto my-4 flex w-10/12 flex-col border border-gray-300 px-5 py-2">
-            <label className="my-1 text-xs text-gray-400">Password</label>
+            <label className="my-1 text-xs text-gray-400">Password (click the Instagram logo)</label>
             <input
               className=" text-ellipsis !bg-white px-3 py-1.5 text-sm focus:!bg-transparent focus:!outline-none"
               id="password"
