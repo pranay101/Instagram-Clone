@@ -21,7 +21,7 @@ const NavigationButtonsMobile = () => {
       {session ? (  
           <img
             className="h-7 w-7 rounded-full object-cover group-active:"
-            src={session.user.image}
+            src={session?.user?.image}
             alt="profile picture"
             onClick={signOut}
           />
