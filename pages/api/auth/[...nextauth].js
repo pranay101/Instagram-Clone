@@ -3,6 +3,9 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 import { getToken } from "next-auth/jwt";
 import makeid from "../../../helpers/helpers"
 
+import bcrypt from "bcryptjs"
+const saltRounds = 10;
+
 export default NextAuth({
   providers: [
     CredentialsProvider({
@@ -19,13 +22,13 @@ export default NextAuth({
       async authorize(credentials, req) {        
         if (
           credentials.username === 'pranayprajapati_._' &&
-          credentials.password === 'pranayprajapati'
+          bcrypt.compareSync(process.env.PASSWORD, credentials.password)          
         ) {
           return {
             id: process.env.ID,
             name: process.env.NAME,
             email: process.env.EMAIL,
-            username:process.env.username,
+            username:process.env.USER_NAME,
             image:"https://avatars.githubusercontent.com/u/35213873?v=4",     
           }
         }

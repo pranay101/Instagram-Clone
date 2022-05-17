@@ -1,16 +1,24 @@
 import { getProviders, signIn } from 'next-auth/react'
 import React, { useState } from 'react'
 
+import bcrypt from "bcryptjs"
+const salt = 10;
+
 const signin = ({ providers }) => {
   const [showCredentials, setshowCredentials] = useState(false)
   const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
+
+
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    
+
     await signIn('credentials', {
       redirect: true,
       username: username,
-      password: password,
+      password: bcrypt.hashSync(password, salt),
       callbackUrl: `${window.location.origin}/`,
     })
   }
