@@ -4,6 +4,8 @@ import Stories from '../components/Stories/Stories'
 import Timeline from '../components/Timeline/Timeline'
 import ProfileSection from '../components/ProfileSection/ProfileSection'
 import PeopleYouMayKnow from '../components/PoepleYouMayKnow/PeopleYouMayKnow'
+import NavigationButtons from '../components/Header/NavigationButtons/NavigationButtons'
+import NavigationButtonsMobile from '../components/Header/NavigationButtons/NavigationButtonMobile'
 
 export default function Home() {
   return (
@@ -15,6 +17,7 @@ export default function Home() {
       <header className='sticky top-0 z-50'>
         <Header />
       </header>
+      
       <main className="grid grid-cols-1 md:grid-cols-2 md:max-w-3xl xl:grid-cols-3 xl:max-w-5xl mx-auto">
         <section className="col-span-2 overflow-y-scroll">
           <Stories />
@@ -25,6 +28,9 @@ export default function Home() {
           <PeopleYouMayKnow />
         </section>
       </main>
+      <div className='sm:inline-grid sticky bg-white bottom-0 z-[100] lg:hidden border-t border-gray-400'>
+        <NavigationButtonsMobile />
+      </div>
     </div>
   )
 }

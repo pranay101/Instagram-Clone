@@ -4,7 +4,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'phone-mockup':"url('https://www.instagram.com/static/images/homepage/phones/home-phones.png/1dc085cdb87d.png')"
+      }
+    }
   },
   plugins: [require('tailwind-scrollbar-hide')],
   

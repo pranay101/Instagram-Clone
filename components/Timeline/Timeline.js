@@ -28,11 +28,19 @@ const Timeline = () => {
     setposts(Post)
   }, [])
 
-  return(
-  <div>
-    {
-      posts.map(post => (<Post username={post.username} avatar={post.avatar} caption={post.caption} image={post.image} key={post.id} />))
-    }
-    </div>)}
+  return (
+    <div>
+      {posts.map((post) => (
+        <Post
+          username={post.username}
+          avatar={post.avatar}
+          caption={post.caption}
+          image={post.image}
+          key={post.id}
+        />
+      ))}
+    </div>
+  )
+}
 
 export default Timeline

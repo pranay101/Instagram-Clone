@@ -11,4 +11,7 @@ svg path {
     .btn{
       @apply h-7 hover:scale-125 cursor-pointer transition-all duration-150 ease-out
     }
+    .navbtn{
+      @apply w-7 hover:animate-bounce ease-out duration-300 cursor-pointer
+    }
   }
